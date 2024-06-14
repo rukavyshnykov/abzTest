@@ -1,3 +1,5 @@
+import { MainPage } from './pages/Main/MainPage'
+
 export function App() {
-  return <div>Hello</div>
+  return <MainPage />
 }

@@ -2,6 +2,9 @@ import { StrictMode } from 'react'
 
 import { createRoot } from 'react-dom/client'
 
+import '@/styles/index.scss'
+import '@fontsource/nunito'
+
 import { App } from './App'
 
 createRoot(document.getElementById('root') as HTMLElement).render(
