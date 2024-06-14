@@ -6,7 +6,7 @@ export const Button = <T extends ElementType = 'button'>(props: ButtonProps<T>) 
   const { as: Component = 'button', children, classname, ...rest } = props
 
   return (
-    <Component className={c.button + ` ${classname}`} {...rest}>
+    <Component className={c.button + ` ${classname ? classname : ''}`} {...rest}>
       {children}
     </Component>
   )

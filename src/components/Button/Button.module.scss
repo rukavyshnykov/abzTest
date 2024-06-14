@@ -1,5 +1,10 @@
 .button {
-  padding: 4px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100px;
+  height: 34px;
 
   color: var(--color-dark);
 
@@ -13,7 +18,7 @@
     background-color: var(--color-primary-hover);
   }
 
-  :disabled {
+  &:disabled {
     color: var(--color-white);
     background-color: var(--color-gray-200);
   }
