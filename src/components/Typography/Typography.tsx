@@ -3,10 +3,10 @@ import { ComponentPropsWithoutRef, ElementType } from 'react'
 import c from './Typography.module.scss'
 
 export const Typography = <T extends ElementType = 'span'>(props: TypographyProps<T>) => {
-  const { as: Component = 'span', children, classname, variant, ...rest } = props
+  const { as: Component = 'span', children, className, variant, ...rest } = props
 
   return (
-    <Component className={c[variant] + ` ${classname ? classname : ''}`} {...rest}>
+    <Component className={c[variant] + ` ${className ? className : ''}`} {...rest}>
       {children}
     </Component>
   )
@@ -14,6 +14,6 @@ export const Typography = <T extends ElementType = 'span'>(props: TypographyProp
 
 type TypographyProps<T extends ElementType = 'span'> = {
   as?: T
-  classname?: string
+  className?: string
   variant: 'body' | 'h1'
 } & ComponentPropsWithoutRef<'button'>
