@@ -1,0 +1,17 @@
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 16px;
+}
+
+.logo {
+  img {
+    display: block;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 0 10px;
+}

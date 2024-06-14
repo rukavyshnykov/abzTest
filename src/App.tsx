@@ -1,5 +1,5 @@
-import { MainPage } from './pages/Main/MainPage'
+import { Layout } from './pages/Layout/Layout'
 
 export function App() {
-  return <MainPage />
+  return <Layout />
 }
