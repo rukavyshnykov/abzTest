@@ -3,6 +3,7 @@ import { FormProvider, useForm } from 'react-hook-form'
 import { Button } from '@/components/Button/Button'
 import { FileUploader } from '@/components/FileUploader/FileUploader'
 import { RadioInput } from '@/components/RadioInput/RadioInput'
+import { DevTool } from '@hookform/devtools'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { TextField } from '@mui/material'
 import { z } from 'zod'
@@ -72,7 +73,13 @@ export const RegisterForm = () => {
   })
 
   const onSubmit = (data: RegisterFormType) => {
-    console.log(data)
+    const formData = new FormData()
+
+    for (const field in data) {
+      typeof data[field] === 'object'
+        ? formData.append('photo', data[field][0] as File)
+        : formData.append(field, data[field])
+    }
   }
 
   return (
@@ -104,6 +111,7 @@ export const RegisterForm = () => {
         <Button disabled={!methods.formState.isDirty || !methods.formState.isValid} type={'submit'}>
           Sign up
         </Button>
+        <DevTool control={methods.control} />
       </form>
     </FormProvider>
   )
