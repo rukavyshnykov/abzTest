@@ -6,7 +6,7 @@ import c from './RadioInput.module.scss'
 
 import { Typography } from '../Typography/Typography'
 
-export const RadioInput = ({ error, label, name, options }: RadioInputProps) => {
+export const RadioInput = ({ label, name, options }: RadioInputProps) => {
   const { control } = useFormContext()
 
   return (
@@ -42,13 +42,11 @@ export const RadioInput = ({ error, label, name, options }: RadioInputProps) => 
           </FormControl>
         )}
       />
-      <span>{error?.message}</span>
     </div>
   )
 }
 
 type RadioInputProps = {
-  error: FieldError | undefined
   label?: string
   name: string
   options: Option[]

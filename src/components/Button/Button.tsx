@@ -15,4 +15,4 @@ export const Button = <T extends ElementType = 'button'>(props: ButtonProps<T>) 
 type ButtonProps<T extends ElementType = 'button'> = {
   as?: T
   classname?: string
-} & ComponentPropsWithoutRef<'button'>
+} & ComponentPropsWithoutRef<T>

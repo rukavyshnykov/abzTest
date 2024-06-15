@@ -1,4 +1,4 @@
-import { ThemeProvider, createMuiTheme, createTheme } from '@mui/material'
+import { ThemeProvider, createTheme } from '@mui/material'
 
 import { Layout } from './pages/Layout/Layout'
 
