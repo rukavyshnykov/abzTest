@@ -15,19 +15,25 @@ export const FileUploader = ({ name }: FileUploaderProps) => {
   return (
     <>
       <div className={c.root}>
-        <Button as={'label'} classname={c.uploader} htmlFor={name}>
-          <Typography variant={'body'}>Upload</Typography>
-        </Button>
-        <div className={c.file}>
-          {getValues('photo') && getValues('photo').length ? (
-            <Typography variant={'body'}>{getValues('photo')[0].name}</Typography>
-          ) : (
-            <Typography variant={'body'}>Upload your photo</Typography>
-          )}
+        <div className={c.row}>
+          <Button
+            as={'label'}
+            classname={c.uploader + ` ${errors.photo ? c.warning : ''}`}
+            htmlFor={name}
+          >
+            <Typography variant={'body'}>Upload</Typography>
+          </Button>
+          <div className={c.file + ` ${errors.photo ? c.warning : ''}`}>
+            {getValues('photo') && getValues('photo').length ? (
+              <Typography variant={'body'}>{getValues('photo')[0].name}</Typography>
+            ) : (
+              <Typography variant={'body'}>Upload your photo</Typography>
+            )}
+          </div>
         </div>
         <input type={'file'} {...register('photo')} hidden id={name} />
+        <div className={c.errors}>{errors.photo?.message?.toString()}</div>
       </div>
-      <div>{JSON.stringify(errors.photo?.message)}</div>
     </>
   )
 }

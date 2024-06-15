@@ -1,5 +1,6 @@
 .root {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
 }
 
@@ -17,6 +18,7 @@
   border-radius: 4px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  outline: 1px solid transparent;
 }
 
 .uploader {
@@ -31,4 +33,24 @@
   border-radius: unset;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
+  outline: 1px solid transparent;
+}
+
+.errors {
+  width: 100%;
+  margin: 4px 0 0 16px;
+
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--color-warning);
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.warning {
+  border-color: var(--color-warning);
+  outline-color: var(--color-warning);
 }

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 
 import { Button } from '@/components/Button/Button'
@@ -11,8 +10,6 @@ import { z } from 'zod'
 import c from './RegisterForm.module.scss'
 
 export const RegisterForm = () => {
-  const [photo, setPhoto] = useState<File | null>(null)
-
   const options = [
     {
       id: 1,
@@ -70,6 +67,7 @@ export const RegisterForm = () => {
   type RegisterFormType = z.infer<typeof RegisterFormSchema>
 
   const methods = useForm<RegisterFormType>({
+    mode: 'onChange',
     resolver: zodResolver(RegisterFormSchema),
   })
 
@@ -103,15 +101,9 @@ export const RegisterForm = () => {
         />
         <RadioInput label={'Select your position'} name={'position_id'} options={options} />
         <FileUploader name={'photo'} />
-        {/* <TextField
-          {...methods.register('photo')}
-          error={!!methods.formState.errors.photo}
-          fullWidth
-          helperText={JSON.stringify(methods.formState.errors.photo?.message)}
-          label={'Photo'}
-          type={'file'}
-        /> */}
-        <Button type={'submit'}>Sign up</Button>
+        <Button disabled={!methods.formState.isDirty || !methods.formState.isValid} type={'submit'}>
+          Sign up
+        </Button>
       </form>
     </FormProvider>
   )
