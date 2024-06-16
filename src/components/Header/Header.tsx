@@ -10,7 +10,7 @@ export const Header = () => {
     <div className={c.root}>
       <div className={c.content}>
         <div className={c.logo}>
-          <img src={logo} />
+          <img alt={'logo'} src={logo} />
         </div>
         <div className={c.buttons}>
           <Button onClick={e => AnchorScroll(e, 'userList')} type={'button'}>

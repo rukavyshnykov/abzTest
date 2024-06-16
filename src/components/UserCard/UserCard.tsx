@@ -9,7 +9,7 @@ export const UserCard = ({ user: { email, name, phone, photo, position } }: User
     <div className={c.root}>
       <div className={c.content}>
         <div className={c.photo}>
-          <img src={photo} />
+          <img alt={`${name}'s photo`} loading={'lazy'} src={photo} />
         </div>
         <Typography className={c.name} variant={'body'}>
           {name}
