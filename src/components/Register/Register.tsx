@@ -6,7 +6,7 @@ import { Typography } from '../Typography/Typography'
 
 export const Register = ({ setPage }: RegisterProps) => {
   return (
-    <div className={c.root}>
+    <div className={c.root} id={'register'}>
       <div className={c.content}>
         <Typography variant={'h1'}>Working with POST request</Typography>
         <RegisterForm setPage={setPage} />

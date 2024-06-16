@@ -1,4 +1,5 @@
 import logo from '@/assets/Logo.png'
+import { AnchorScroll } from '@/utils'
 
 import c from './Header.module.scss'
 
@@ -12,8 +13,12 @@ export const Header = () => {
           <img src={logo} />
         </div>
         <div className={c.buttons}>
-          <Button type={'button'}>Users</Button>
-          <Button type={'button'}>Sign up</Button>
+          <Button onClick={e => AnchorScroll(e, 'userList')} type={'button'}>
+            Users
+          </Button>
+          <Button onClick={e => AnchorScroll(e, 'register')} type={'button'}>
+            Sign up
+          </Button>
         </div>
       </div>
     </div>

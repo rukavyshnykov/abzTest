@@ -9,9 +9,9 @@ export const useUserList = ({ page, setPage }: useUserListType) => {
 
   const sortedList = useMemo(() => {
     if (isSuccess) {
-      const check = [...users.users]
+      const usersArray = [...users.users]
 
-      return check.sort((a, b) => b.registration_timestamp - a.registration_timestamp)
+      return usersArray.sort((a, b) => b.registration_timestamp - a.registration_timestamp)
     }
   }, [users, isSuccess])
 

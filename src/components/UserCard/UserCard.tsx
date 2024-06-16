@@ -1,5 +1,4 @@
-import mock from '@/assets/bg.png'
-import { User } from '@/types'
+import { User } from '@/services/types'
 
 import c from './UserCard.module.scss'
 

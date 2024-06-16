@@ -1,3 +1,5 @@
+import { AnchorScroll } from '@/utils'
+
 import c from './Banner.module.scss'
 
 import { Button } from '../Button/Button'
@@ -16,7 +18,9 @@ export const Banner = () => {
           interfaces with accessibility in mind. They should also be excited to learn, as the world
           of Front-End Development keeps evolving.
         </Typography>
-        <Button type={'button'}>Sign up</Button>
+        <Button onClick={e => AnchorScroll(e, 'register')} type={'button'}>
+          Sign up
+        </Button>
       </div>
     </div>
   )

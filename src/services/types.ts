@@ -1,5 +1,3 @@
-import { User } from '@/types'
-
 export type UsersResponse = {
   count: number
   links: {
@@ -26,4 +24,15 @@ export type Position = {
 export type TokenResponse = {
   success: boolean
   token: string
+}
+
+export type User = {
+  email: string
+  id: string
+  name: string
+  phone: string
+  photo: string
+  position: string
+  position_id: string
+  registration_timestamp: number
 }

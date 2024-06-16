@@ -5,9 +5,15 @@
   align-items: center;
 
   padding: 0 16px;
+
+  @media (min-width: '2560px') {
+    padding: 0;
+  }
 }
 
 .list {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   gap: 20px 0;
@@ -31,4 +37,28 @@
 
 .hidden {
   display: none;
+}
+
+.loader {
+  pointer-events: none;
+
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  visibility: hidden;
+  background-color: transparent;
+
+  transition: 0.2s;
+
+  &.fetching {
+    pointer-events: all;
+    visibility: unset;
+    background-color: rgba($color: #000, $alpha: 40%);
+  }
 }

@@ -18,7 +18,7 @@ export const FileUploader = ({ name }: FileUploaderProps) => {
         <div className={c.row}>
           <Button
             as={'label'}
-            classname={c.uploader + ` ${errors.photo ? c.warning : ''}`}
+            className={c.uploader + ` ${errors.photo ? c.warning : ''}`}
             htmlFor={name}
           >
             <Typography variant={'body'}>Upload</Typography>

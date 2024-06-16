@@ -1,7 +1,6 @@
 import { baseApi } from '@/services/baseApi'
-import { User } from '@/types'
 
-import { PositionsResponse, UsersResponse } from './types'
+import { PositionsResponse, User, UsersResponse } from './types'
 
 export const usersApi = baseApi.injectEndpoints({
   endpoints: builder => ({
@@ -13,7 +12,6 @@ export const usersApi = baseApi.injectEndpoints({
       >
     >({
       invalidatesTags: ['User'],
-      // invalidatesTags: ['User'],
       query: body => {
         const formData = new FormData()
         const user = {
@@ -25,7 +23,7 @@ export const usersApi = baseApi.injectEndpoints({
         }
 
         for (const field in user) {
-          formData.append(field, user[field])
+          formData.append(field, user[field as keyof typeof user] as any)
         }
 
         return {
@@ -43,7 +41,6 @@ export const usersApi = baseApi.injectEndpoints({
       }),
     }),
     getUsers: builder.query<UsersResponse, { count: number; page: number }>({
-      // Refetch when the page arg changes
       forceRefetch({ currentArg, previousArg }) {
         return currentArg !== previousArg
       },

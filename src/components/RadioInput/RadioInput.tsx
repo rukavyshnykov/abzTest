@@ -7,11 +7,11 @@ import c from './RadioInput.module.scss'
 
 import { Typography } from '../Typography/Typography'
 
-export const RadioInput = ({ label, name, options }: RadioInputProps) => {
+export const RadioInput = ({ className, label, name, options }: RadioInputProps) => {
   const { control } = useFormContext()
 
   return (
-    <div className={c.root}>
+    <div className={c.root + ` ${className ? className : ''}`}>
       {label && (
         <FormLabel id={label}>
           <Typography variant={'body'}>{label}</Typography>
@@ -48,6 +48,7 @@ export const RadioInput = ({ label, name, options }: RadioInputProps) => {
 }
 
 type RadioInputProps = {
+  className?: string
   label?: string
   name: string
   options: Position[]

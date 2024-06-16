@@ -2,6 +2,7 @@ import { FormProvider } from 'react-hook-form'
 
 import { Button } from '@/components/Button/Button'
 import { FileUploader } from '@/components/FileUploader/FileUploader'
+import { Loader } from '@/components/Loader/Loader'
 import { RadioInput } from '@/components/RadioInput/RadioInput'
 import { useGetPositionsQuery } from '@/services/usersApi'
 import { TextField } from '@mui/material'
@@ -11,11 +12,11 @@ import c from './RegisterForm.module.scss'
 import { useRegisterForm } from './useRegisterForm'
 
 export const RegisterForm = ({ setPage }: RegisterFormType) => {
-  const { data: positions, isFetching, isLoading } = useGetPositionsQuery()
+  const { data: positions, isLoading } = useGetPositionsQuery()
   const [methods, onSubmit] = useRegisterForm({ setPage })
 
-  if (isLoading || isFetching) {
-    return <>Loading...</>
+  if (isLoading) {
+    return <Loader />
   }
 
   return (
@@ -43,6 +44,7 @@ export const RegisterForm = ({ setPage }: RegisterFormType) => {
           label={'Phone'}
         />
         <RadioInput
+          className={c.radio}
           label={'Select your position'}
           name={'position_id'}
           options={positions!.positions}

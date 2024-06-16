@@ -5,11 +5,20 @@
   padding: 13px 16px;
 
   @media (min-width: '768px') {
-    padding: 17px 32px;
+    padding-right: 32px;
+    padding-left: 32px;
   }
 
   @media (min-width: '1024px') {
-    padding: 17px 60px;
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+
+  @media (min-width: '2560px') {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 
