@@ -1,8 +1,10 @@
 import { baseApi } from '@/services/baseApi'
 
+import { TokenResponse } from './types'
+
 const authApi = baseApi.injectEndpoints({
   endpoints: builder => ({
-    getToken: builder.query<void, void>({
+    getToken: builder.query<TokenResponse, void>({
       query: () => ({
         method: 'GET',
         url: '/token',

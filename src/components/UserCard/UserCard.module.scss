@@ -30,3 +30,15 @@
 .name {
   margin: 20px 0;
 }
+
+.root {
+  width: 100%;
+
+  @media (min-width: '768px') {
+    width: calc(50% - 8px);
+  }
+
+  @media (min-width: '1024px') {
+    width: calc(33.33% - 29px / 1.5);
+  }
+}

@@ -22,3 +22,8 @@ export type Position = {
   id: number
   name: string
 }
+
+export type TokenResponse = {
+  success: boolean
+  token: string
+}

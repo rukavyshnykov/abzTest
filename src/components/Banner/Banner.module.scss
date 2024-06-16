@@ -17,4 +17,16 @@
       margin: 21px 0 32px;
     }
   }
+
+  @media (min-width: '768px') {
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 89px 0 88px;
+  }
+
+  @media (min-width: '1024px') {
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 164px 0 163px;
+  }
 }

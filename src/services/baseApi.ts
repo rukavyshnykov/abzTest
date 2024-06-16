@@ -1,9 +1,10 @@
-import { createApi } from '@reduxjs/toolkit/query/react'
-
-import { baseQueryWithReauth } from './baseApiWithReauth'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const baseApi = createApi({
-  baseQuery: baseQueryWithReauth,
+  baseQuery: fetchBaseQuery({
+    baseUrl: 'https://frontend-test-assignment-api.abz.agency/api/v1',
+  }),
   endpoints: () => ({}),
   reducerPath: 'baseApi',
+  tagTypes: ['User'],
 })

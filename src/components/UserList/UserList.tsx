@@ -1,20 +1,15 @@
-import { useMemo } from 'react'
-
-import { useGetUsersQuery } from '@/services/usersApi'
-import { User } from '@/types'
-
 import c from './UserList.module.scss'
 
 import { Button } from '../Button/Button'
 import { Typography } from '../Typography/Typography'
 import { UserCard } from '../UserCard/UserCard'
+import { useUserList } from './useUserList'
 
-export const UserList = () => {
-  const { data: users, isFetching, isLoading } = useGetUsersQuery({ count: 20, page: 1 })
-
-  const sortedList = useMemo(() => {
-    return users && users.users.sort((a, b) => a.registration_timestamp - b.registration_timestamp)
-  }, [users])
+export const UserList = ({ page, setPage }: UserListProps) => {
+  const [sortedList, handleShowMoreClick, users, isFetching, isLoading] = useUserList({
+    page,
+    setPage,
+  })
 
   if (isLoading || isFetching) {
     return <>Loading...</>
@@ -27,14 +22,21 @@ export const UserList = () => {
           Working with GET request
         </Typography>
         <div className={c.list}>
-          {sortedList?.length ? (
-            sortedList.map(u => <UserCard key={u.id} user={u} />)
-          ) : (
-            <>Nothing here</>
-          )}
+          {sortedList ? sortedList.map(u => <UserCard key={u.id} user={u} />) : <>Loading...</>}
         </div>
-        <Button type={'button'}>Show more</Button>
+        <Button
+          className={users?.total_pages === page ? c.hidden : ''}
+          onClick={handleShowMoreClick}
+          type={'button'}
+        >
+          Show more
+        </Button>
       </div>
     </div>
   )
+}
+
+type UserListProps = {
+  page: number
+  setPage: (page: number) => void
 }

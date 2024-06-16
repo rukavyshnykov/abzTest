@@ -9,4 +9,12 @@
   span {
     text-align: center;
   }
+
+  @media (min-width: '768px') {
+    padding: 0 32px;
+  }
+
+  @media (min-width: '768px') {
+    padding: 0 60px;
+  }
 }

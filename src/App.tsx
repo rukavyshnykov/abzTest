@@ -2,7 +2,7 @@ import { Provider } from 'react-redux'
 
 import { ThemeProvider, createTheme, radioClasses } from '@mui/material'
 
-import { Layout } from './pages/Layout/Layout'
+import { Router } from './router'
 import { store } from './store/store'
 
 const theme = createTheme({
@@ -39,7 +39,7 @@ export function App() {
   return (
     <ThemeProvider theme={theme}>
       <Provider store={store}>
-        <Layout />
+        <Router />
       </Provider>
     </ThemeProvider>
   )
