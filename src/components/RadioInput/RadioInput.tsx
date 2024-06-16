@@ -1,5 +1,6 @@
-import { Controller, FieldError, useFormContext } from 'react-hook-form'
+import { Controller, useFormContext } from 'react-hook-form'
 
+import { Position } from '@/services/types'
 import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from '@mui/material'
 
 import c from './RadioInput.module.scss'
@@ -49,10 +50,5 @@ export const RadioInput = ({ label, name, options }: RadioInputProps) => {
 type RadioInputProps = {
   label?: string
   name: string
-  options: Option[]
-}
-
-type Option = {
-  id: number
-  name: string
+  options: Position[]
 }

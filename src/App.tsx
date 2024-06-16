@@ -1,6 +1,9 @@
+import { Provider } from 'react-redux'
+
 import { ThemeProvider, createTheme, radioClasses } from '@mui/material'
 
 import { Layout } from './pages/Layout/Layout'
+import { store } from './store/store'
 
 const theme = createTheme({
   components: {
@@ -35,7 +38,9 @@ const theme = createTheme({
 export function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Layout />
+      <Provider store={store}>
+        <Layout />
+      </Provider>
     </ThemeProvider>
   )
 }

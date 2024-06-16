@@ -5,19 +5,19 @@ import c from './UserCard.module.scss'
 
 import { Typography } from '../Typography/Typography'
 
-export const UserCard = ({ user }: UserCardProps) => {
+export const UserCard = ({ user: { email, name, phone, photo, position } }: UserCardProps) => {
   return (
     <div className={c.root}>
       <div className={c.content}>
         <div className={c.photo}>
-          <img src={mock} />
+          <img src={photo} />
         </div>
         <Typography className={c.name} variant={'body'}>
-          Name
+          {name}
         </Typography>
-        <Typography variant={'body'}>Position</Typography>
-        <Typography variant={'body'}>Email</Typography>
-        <Typography variant={'body'}>Phone</Typography>
+        <Typography variant={'body'}>{position}</Typography>
+        <Typography variant={'body'}>{email}</Typography>
+        <Typography variant={'body'}>{phone}</Typography>
       </div>
     </div>
   )

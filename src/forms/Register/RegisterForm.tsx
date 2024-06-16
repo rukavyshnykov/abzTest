@@ -3,6 +3,7 @@ import { FormProvider, useForm } from 'react-hook-form'
 import { Button } from '@/components/Button/Button'
 import { FileUploader } from '@/components/FileUploader/FileUploader'
 import { RadioInput } from '@/components/RadioInput/RadioInput'
+import { useAddUserMutation, useGetPositionsQuery } from '@/services/usersApi'
 import { DevTool } from '@hookform/devtools'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { TextField } from '@mui/material'
@@ -11,14 +12,17 @@ import { z } from 'zod'
 import c from './RegisterForm.module.scss'
 
 export const RegisterForm = () => {
+  const { data: positions, isFetching, isLoading } = useGetPositionsQuery()
+  const [addUser, {}] = useAddUserMutation()
+
   const options = [
     {
       id: 1,
-      name: 'Front',
+      position: 'Front',
     },
     {
       id: 2,
-      name: 'Back',
+      position: 'Back',
     },
   ]
 
@@ -76,10 +80,17 @@ export const RegisterForm = () => {
     const formData = new FormData()
 
     for (const field in data) {
+      console.log(field, data[field])
       typeof data[field] === 'object'
         ? formData.append('photo', data[field][0] as File)
         : formData.append(field, data[field])
     }
+
+    addUser(formData)
+  }
+
+  if (isLoading || isFetching) {
+    return <>Loading...</>
   }
 
   return (
@@ -106,7 +117,11 @@ export const RegisterForm = () => {
           helperText={methods.formState.errors.phone?.message}
           label={'Phone'}
         />
-        <RadioInput label={'Select your position'} name={'position_id'} options={options} />
+        <RadioInput
+          label={'Select your position'}
+          name={'position_id'}
+          options={positions!.positions}
+        />
         <FileUploader name={'photo'} />
         <Button disabled={!methods.formState.isDirty || !methods.formState.isValid} type={'submit'}>
           Sign up
