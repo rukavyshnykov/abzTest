@@ -1,0 +1,61 @@
+{
+  "hash": "78c086ed",
+  "configHash": "3c90a610",
+  "lockfileHash": "dca133f7",
+  "browserHash": "418e2db3",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "1052b9b8",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/.pnpm/react@18.3.1/node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "6edcccd1",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "5a6da85f",
+      "needsInterop": true
+    },
+    "react-redux": {
+      "src": "../../node_modules/.pnpm/react-redux@9.1.2_@types+react@18.3.3_react@18.3.1_redux@5.0.1/node_modules/react-redux/dist/react-redux.mjs",
+      "file": "react-redux.js",
+      "fileHash": "dab34594",
+      "needsInterop": false
+    },
+    "@mui/material": {
+      "src": "../../node_modules/.pnpm/@mui+material@5.15.20_@emotion+react@11.11.4_@emotion+styled@11.11.5_@types+react@18.3.3_react-dom@18.3.1_react@18.3.1/node_modules/@mui/material/index.js",
+      "file": "@mui_material.js",
+      "fileHash": "9b8690d1",
+      "needsInterop": false
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/.pnpm/react-router-dom@6.23.1_react-dom@18.3.1_react@18.3.1/node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "9a08bf73",
+      "needsInterop": false
+    },
+    "@reduxjs/toolkit": {
+      "src": "../../node_modules/.pnpm/@reduxjs+toolkit@2.2.5_react-redux@9.1.2_react@18.3.1/node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs",
+      "file": "@reduxjs_toolkit.js",
+      "fileHash": "e56fa153",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-NDWYSDRJ": {
+      "file": "chunk-NDWYSDRJ.js"
+    },
+    "chunk-QZ55VL3A": {
+      "file": "chunk-QZ55VL3A.js"
+    },
+    "chunk-EWTE5DHJ": {
+      "file": "chunk-EWTE5DHJ.js"
+    }
+  }
+}
